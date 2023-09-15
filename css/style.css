@@ -3,8 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'League Spartan', sans-serif;
-    list-style: none;
-    text-decoration: none;
     scroll-behavior: smooth;
 }
 
@@ -23,7 +21,7 @@ nav{
     justify-content: space-between;
     padding: 10px 8%;
     transition: .3s;
-    background-color: white;
+    background-color: transparent;
     box-shadow: 0px 1px 8px;
 }
 
@@ -37,9 +35,11 @@ nav{
     display: flex;
 }
 .navlist li{
+    list-style: none;
     position: relative;
 }
 .navlist a{
+    text-decoration: none;
     font-size: 1.8rem;
     color: black;
     font-weight: 800;
@@ -150,6 +150,8 @@ nav{
     width: 600px;
     height: auto;
     border-radius: 360px;
+    box-shadow:  -5px -5px 30px #d6d6d6,
+    10px 10px 20px #868686;
 }
 
 .cart{
@@ -157,41 +159,42 @@ nav{
     height: 100%;
     width: 100%;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     align-items: center;
-    grid-gap: 2rem;
+    justify-content: space-between;
 }
 
-.cart-text{
+.cart h1{
+    flex: 1;
     justify-content: center;
     text-align: center;
-}
-
-.cart-text h1{
-    margin: 10px 0px 25px;
     font-size: 4rem;
     letter-spacing: -3px;
     line-height: 1;
     font-weight: 600;
 }
 
-.cart-text p{
-    margin: 10px 0px 0px;
+.description {
+    text-decoration: none;
     font-size: 1rem;
-    line-height: 2;
-    font-weight: 600;
+    color: black;
+    font-weight: 800;
+    padding-left: 0;
 }
-
-.img-contain{
-    position: relative;
+  
+.img-contain {
+    flex: 1; /* This will make the image container take up the available space */
+    text-align: right; /* This will align the image to the right within the container */
 }
-
-.cart-img img{
+  
+.cart-img img {
     width: 760px;
     height: 100%;
     border: 50px solid rgb(58, 47, 11);
+    max-width: 100%;
 }
+
+
 /*responsiveness */
 @media (min-width: 993px) {
     .dropdown.open{
